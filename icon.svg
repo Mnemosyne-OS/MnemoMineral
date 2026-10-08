@@ -1,0 +1,15 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mineral">
+  <defs>
+    <linearGradient id="mineral-grad" x1="6" y1="42" x2="42" y2="6" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <path d="M24 4L34 12V34L24 44L14 34V12Z" fill="url(#mineral-grad)" fill-opacity="0.14" stroke="url(#mineral-grad)" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M14 12L24 18L34 12M24 18V44" stroke="url(#mineral-grad)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M14 34L24 28L34 34" stroke="url(#mineral-grad)" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" stroke-opacity="0.6"/>
+  <circle cx="24" cy="18" r="2.2" fill="url(#mineral-grad)"/>
+  <circle cx="14" cy="12" r="1.8" fill="url(#mineral-grad)"/>
+  <circle cx="34" cy="12" r="1.8" fill="url(#mineral-grad)"/>
+  <circle cx="24" cy="28" r="1.8" fill="url(#mineral-grad)"/>
+</svg>

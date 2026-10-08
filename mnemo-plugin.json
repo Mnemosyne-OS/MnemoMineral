@@ -1,0 +1,48 @@
+{
+  "name": "@mnemosyne-plugins/mnemo-mineral",
+  "displayName": "Mineral",
+  "version": "0.1.0",
+  "category": "Research",
+  "icon": "icon.svg",
+  "vendor": "Mnemosyne Labs",
+  "license": "MIT",
+  "description": "An interactive atlas of crystal structures, wired to your own memory. Every mineral is drawn as the contents of its real unit cell — symmetry applied, atoms on special positions counted once — from public-domain data, with its COD id, its Nickel-Strunz class and its space group on screen. Ask what your own notes already say about the mineral you are looking at. Works fully offline. Then let it quiz you, drawing the wrong answers from the same Nickel-Strunz class so the right one is never free.",
+  "descriptionI18n": {
+    "en": "An interactive atlas of crystal structures, wired to your own memory. Every mineral is drawn as the contents of its real unit cell — symmetry applied, atoms on special positions counted once — from public-domain data, with its COD id, its Nickel-Strunz class and its space group on screen. Ask what your own notes already say about the mineral you are looking at. Works fully offline. Then let it quiz you, drawing the wrong answers from the same Nickel-Strunz class so the right one is never free.",
+    "fr": "Un atlas interactif des structures cristallines, branché sur votre propre mémoire. Chaque minéral est dessiné comme le contenu de sa vraie maille — symétrie appliquée, atomes en position spéciale comptés une seule fois — à partir de données du domaine public, avec son identifiant COD, sa classe de Nickel-Strunz et son groupe d'espace à l'écran. Demandez ce que vos propres notes disent déjà du minéral que vous regardez. Fonctionne entièrement hors ligne. Puis laissez-le vous interroger, en tirant les mauvaises réponses dans la même classe de Nickel-Strunz pour que la bonne ne soit jamais gratuite.",
+    "es": "Un atlas interactivo de estructuras cristalinas, conectado a tu propia memoria. Cada mineral se dibuja como el contenido de su celda unidad real — con la simetría aplicada y los átomos en posiciones especiales contados una sola vez — a partir de datos de dominio público, con su identificador COD, su clase de Nickel-Strunz y su grupo espacial en pantalla. Pregunta qué dicen ya tus propias notas sobre el mineral que estás mirando. Funciona completamente sin conexión. Luego deja que te examine, tomando las respuestas incorrectas de la misma clase de Nickel-Strunz para que la correcta nunca sea gratis."
+  },
+  "keywords": [
+    "3d",
+    "chemistry",
+    "cod",
+    "crystallography",
+    "education",
+    "flashcards",
+    "geology",
+    "mineralogy",
+    "quiz",
+    "revision",
+    "spaced-repetition",
+    "study"
+  ],
+  "permissions": [
+    "vault:read",
+    "vault:write"
+  ],
+  "repository": "https://github.com/Mnemosyne-OS/MnemoMineral",
+  "updateStrategy": "git",
+  "entrypoints": {
+    "renderer": "index.html"
+  },
+  "widgets": [
+    {
+      "id": "mnemo-mineral-main",
+      "icon": "💎",
+      "name": "Mineral",
+      "route": "index.html",
+      "defaultWidth": 1180,
+      "defaultHeight": 840
+    }
+  ]
+}

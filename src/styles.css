@@ -1,0 +1,184 @@
+/* Design tokens come from the host via applyDesignTokens(); these are the
+   fallbacks for when the cartridge is opened outside the shell. */
+:root {
+  --mnemo-bg: #0b0d10;
+  --mnemo-surface: #12161c;
+  --mnemo-border: #232a33;
+  --mnemo-text: #e6ebf2;
+  --mnemo-text-muted: #99a3b0;
+  --mnemo-text-dim: #6b7686;
+  --mnemo-accent: #6ea8fe;
+  --mnemo-warn: #e8b84b;
+  --mnemo-error: #ef6f6f;
+  --mnemo-right: #62c98d;
+}
+
+* { box-sizing: border-box; }
+
+/* A class rule that sets `display` BEATS the user-agent's [hidden] rule, so an
+   element with the attribute stays on screen. That is how the review overlay
+   ended up permanently painted over the whole cartridge, invisible but eating
+   every click: the app looked dimmed and nothing in the list responded. */
+[hidden] { display: none !important; }
+
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--mnemo-bg);
+  color: var(--mnemo-text);
+  font: 13px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr 320px;
+  height: 100%;
+}
+
+/* ------------------------------------------------------------------- rail */
+.rail {
+  display: flex; flex-direction: column; min-height: 0;
+  border-right: 1px solid var(--mnemo-border);
+  background: var(--mnemo-surface);
+}
+.rail-head { padding: 14px 14px 8px; }
+.rail-head h1 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: .01em; }
+.rail-count { margin: 2px 0 0; color: var(--mnemo-text-dim); font-size: 11px; }
+.rail-search { padding: 0 14px 10px; }
+.rail-search input {
+  width: 100%; padding: 7px 9px;
+  background: var(--mnemo-bg); color: var(--mnemo-text);
+  border: 1px solid var(--mnemo-border); border-radius: 6px; font: inherit;
+}
+.rail-search input:focus { outline: none; border-color: var(--mnemo-accent); }
+.rail-list { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; padding: 0 8px 8px; }
+.rail-none { color: var(--mnemo-text-dim); padding: 8px 6px; }
+.rail-foot {
+  display: flex; gap: 6px; padding: 8px;
+  border-top: 1px solid var(--mnemo-border);
+}
+
+.row {
+  display: block; width: 100%; text-align: left;
+  padding: 7px 8px; margin-bottom: 1px;
+  background: none; border: 0; border-radius: 6px;
+  color: inherit; font: inherit; cursor: pointer;
+}
+.row:hover { background: rgba(255,255,255,.04); }
+.row.is-on { background: rgba(110,168,254,.14); }
+.row-name { display: block; }
+.row-meta { display: block; color: var(--mnemo-text-dim); font-size: 11px;
+  overflow-wrap: anywhere; }
+
+/* ------------------------------------------------------------------ stage */
+.stage { position: relative; min-width: 0; }
+.viewer { position: absolute; inset: 0; }
+.stage-empty {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  padding: 24px; text-align: center; color: var(--mnemo-text-muted);
+  pointer-events: none;
+}
+.stage-tools {
+  position: absolute; left: 12px; bottom: 12px;
+  display: flex; gap: 14px; align-items: center;
+  padding: 7px 11px; border-radius: 8px;
+  background: rgba(18,22,28,.86); border: 1px solid var(--mnemo-border);
+  backdrop-filter: blur(6px);
+}
+.tool { display: flex; gap: 6px; align-items: center; color: var(--mnemo-text-muted); }
+.stage-tools select {
+  background: var(--mnemo-bg); color: var(--mnemo-text);
+  border: 1px solid var(--mnemo-border); border-radius: 5px; font: inherit; padding: 2px 4px;
+}
+
+/* ------------------------------------------------------------------ facts */
+.facts {
+  min-height: 0; overflow-y: auto; padding: 14px;
+  border-left: 1px solid var(--mnemo-border); background: var(--mnemo-surface);
+}
+.facts h2 { margin: 0; font-size: 17px; font-weight: 600; }
+.ima {
+  display: inline-block; margin: 4px 0 10px; padding: 1px 6px;
+  border: 1px solid var(--mnemo-border); border-radius: 4px;
+  color: var(--mnemo-text-muted); font-size: 11px; letter-spacing: .04em;
+}
+.facts dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; margin: 0 0 10px; }
+.facts dt { color: var(--mnemo-text-dim); }
+.facts dd { margin: 0; }
+.facts-how { margin: 0 0 10px; color: var(--mnemo-text-dim); font-size: 11px; }
+.facts-caveat {
+  margin: 0 0 8px; padding: 7px 9px;
+  border-left: 2px solid var(--mnemo-warn); border-radius: 0 4px 4px 0;
+  background: rgba(232,184,75,.07); color: var(--mnemo-text-muted); font-size: 11.5px;
+}
+.facts-source { margin: 10px 0 0; font-size: 11px; }
+.facts-source a { color: var(--mnemo-accent); }
+.facts-more { color: var(--mnemo-text-dim); }
+
+/* ----------------------------------------------------------------- memory */
+.memory { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--mnemo-border); }
+.memory h3 { margin: 0 0 8px; font-size: 12px; font-weight: 600; color: var(--mnemo-text-muted); }
+.memory-note { margin: 6px 0 0; color: var(--mnemo-text-dim); font-size: 11.5px; }
+.memory-answer { margin: 0 0 8px; white-space: pre-wrap; }
+.memory-error { color: var(--mnemo-error); }
+.memory-ask { margin-top: 2px; }
+
+/* --------------------------------------------------------------- controls */
+button.ghost {
+  padding: 6px 10px; border-radius: 6px; cursor: pointer;
+  background: none; border: 1px solid var(--mnemo-border);
+  color: var(--mnemo-text); font: inherit;
+}
+button.ghost:hover:not(:disabled) { border-color: var(--mnemo-accent); }
+button.ghost:disabled { opacity: .45; cursor: default; }
+
+/* ---------------------------------------------------------------- overlay */
+.overlay {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  background: rgba(6,8,11,.72); z-index: 50;
+}
+.sheet {
+  width: min(620px, 92vw); max-height: 84vh; overflow: auto;
+  padding: 18px; border-radius: 10px;
+  background: var(--mnemo-surface); border: 1px solid var(--mnemo-border);
+}
+.sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.sheet h2 { margin: 0 0 10px; font-size: 15px; }
+.sheet-head h2 { margin: 0; }
+.sheet-body { margin: 12px 0; }
+.sheet-body p { margin: 0 0 10px; }
+.sheet-body a { color: var(--mnemo-accent); }
+.sheet-note { color: var(--mnemo-text-dim); font-size: 11.5px; }
+
+/* ----------------------------------------------------------------- review */
+.levels { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 6px; }
+.level {
+  padding: 9px 10px; text-align: left; border-radius: 7px; cursor: pointer;
+  background: none; border: 1px solid var(--mnemo-border); color: inherit; font: inherit;
+}
+.level:hover:not(:disabled) { border-color: var(--mnemo-accent); }
+.level:disabled { opacity: .4; cursor: default; }
+
+.quiz-q { color: var(--mnemo-text-muted); }
+.quiz-fig {
+  padding: 18px; margin: 10px 0 14px; border-radius: 8px; text-align: center;
+  background: var(--mnemo-bg); border: 1px solid var(--mnemo-border);
+}
+.quiz-formula { font-size: 24px; }
+.quiz-sg { margin-top: 4px; color: var(--mnemo-text-muted); }
+.quiz-el, .quiz-atoms { margin-top: 4px; color: var(--mnemo-text-dim); font-size: 11.5px; }
+.quiz-options { display: grid; gap: 6px; }
+.quiz-option {
+  padding: 9px 11px; text-align: left; border-radius: 7px; cursor: pointer;
+  background: none; border: 1px solid var(--mnemo-border); color: inherit; font: inherit;
+}
+.quiz-option:hover { border-color: var(--mnemo-accent); }
+.verdict { font-size: 15px; }
+.verdict.is-right { color: var(--mnemo-right); }
+.verdict.is-wrong { color: var(--mnemo-warn); }
+.quiz-done { font-size: 15px; margin-bottom: 12px; }
+
+@media (max-width: 980px) {
+  .app { grid-template-columns: 220px 1fr; }
+  .facts { display: none; }
+}

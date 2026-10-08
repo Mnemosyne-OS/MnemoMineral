@@ -1,0 +1,111 @@
+{
+  "attempted": 3688,
+  "shipped": 3667,
+  "failures": [
+    {
+      "cod": 1010965,
+      "name": "alunite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010964,
+      "name": "braggite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010772,
+      "name": "cosalite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010744,
+      "name": "dufrénoysite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010967,
+      "name": "galenobismutite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1011272,
+      "name": "goyazite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1011273,
+      "name": "harmotome",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1011270,
+      "name": "herderite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1011274,
+      "name": "hydrocalumite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010753,
+      "name": "jamesonite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010790,
+      "name": "lansfordite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010757,
+      "name": "maucherite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010868,
+      "name": "mesolite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010761,
+      "name": "rammelsbergite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010762,
+      "name": "rathite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010778,
+      "name": "rhodizite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010763,
+      "name": "sartorite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010764,
+      "name": "skutterudite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010765,
+      "name": "stephanite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010703,
+      "name": "tilasite",
+      "why": "NO_SITES"
+    },
+    {
+      "cod": 1010770,
+      "name": "weibullite",
+      "why": "NO_SITES"
+    }
+  ]
+}

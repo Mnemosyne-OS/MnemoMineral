@@ -1,0 +1,179 @@
+{
+  "builtAt": "2026-09-09T09:31:19.288Z",
+  "sourceFiles": 230,
+  "codRowsRead": 525182,
+  "codRowsCarryingAMineralName": 15279,
+  "duplicateRowsFromOverlappingWindows": 99,
+  "speciesKnown": 6304,
+  "dropped": {
+    "noMineralField": 509903,
+    "notANameShape": 123,
+    "noMatchingSpecies": 2441
+  },
+  "speciesMatched": 3688,
+  "speciesWithNoDrawableStructure": 0,
+  "mineralsRetained": 3688,
+  "structuresBehindThem": 12715,
+  "topUnmatchedNames": [
+    [
+      "Olivine",
+      127
+    ],
+    [
+      "Iron",
+      98
+    ],
+    [
+      "Nickel",
+      60
+    ],
+    [
+      "Magnesiowuestite",
+      60
+    ],
+    [
+      "Lime",
+      58
+    ],
+    [
+      "Cobalt",
+      42
+    ],
+    [
+      "Tungsten",
+      42
+    ],
+    [
+      "Rhodocrosite",
+      40
+    ],
+    [
+      "Beryllium",
+      38
+    ],
+    [
+      "Hydrogen",
+      34
+    ],
+    [
+      "Feldspar",
+      31
+    ],
+    [
+      "Biotite",
+      29
+    ],
+    [
+      "Scapolite",
+      27
+    ],
+    [
+      "Neon",
+      24
+    ],
+    [
+      "Potassium",
+      22
+    ],
+    [
+      "Lithium",
+      18
+    ],
+    [
+      "Xenon",
+      18
+    ],
+    [
+      "Silver",
+      18
+    ],
+    [
+      "Phengite",
+      17
+    ],
+    [
+      "Antimony",
+      17
+    ],
+    [
+      "Silicon",
+      16
+    ],
+    [
+      "Gold",
+      16
+    ],
+    [
+      "Wuestite",
+      15
+    ],
+    [
+      "Pyroxene",
+      15
+    ],
+    [
+      "Copper",
+      15
+    ],
+    [
+      "Hornblende",
+      14
+    ],
+    [
+      "Ferrocolumbite",
+      14
+    ],
+    [
+      "Indium",
+      14
+    ],
+    [
+      "Perboeite-(Ce)",
+      13
+    ],
+    [
+      "Niobate Perovskite",
+      13
+    ],
+    [
+      "Boron",
+      13
+    ],
+    [
+      "Manganocolumbite",
+      13
+    ],
+    [
+      "Manganogrunerite",
+      12
+    ],
+    [
+      "Hydroxylapatite-dental",
+      12
+    ],
+    [
+      "Magnesium",
+      12
+    ],
+    [
+      "Gismondine",
+      11
+    ],
+    [
+      "Nitrogen",
+      11
+    ],
+    [
+      "dehydrated_AgA",
+      11
+    ],
+    [
+      "Allanite-subgroup mineral",
+      10
+    ],
+    [
+      "Sulfur",
+      10
+    ]
+  ]
+}

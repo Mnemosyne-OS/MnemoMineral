@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mineral</title>
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+<div id="app" class="app">
+
+  <aside class="rail" id="rail">
+    <header class="rail-head">
+      <h1>Mineral</h1>
+      <p class="rail-count" id="railCount">&mdash;</p>
+    </header>
+    <div class="rail-search">
+      <input id="search" type="search" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="rail-list" id="list" role="listbox" aria-label="Minerals"></div>
+    <footer class="rail-foot">
+      <button class="ghost" id="reviewBtn" type="button"></button>
+      <button class="ghost" id="creditsBtn" type="button"></button>
+    </footer>
+  </aside>
+
+  <main class="stage">
+    <div id="viewer" class="viewer"></div>
+    <div class="stage-empty" id="stageEmpty"></div>
+    <div class="stage-tools" id="stageTools" hidden>
+      <label class="tool"><input type="checkbox" id="showCell" checked> <span id="lblCell"></span></label>
+      <label class="tool"><input type="checkbox" id="showBonds" checked> <span id="lblBonds"></span></label>
+      <label class="tool"><span id="lblRepeat"></span>
+        <select id="repeat">
+          <option value="1">1 &times; 1 &times; 1</option>
+          <option value="2">2 &times; 2 &times; 2</option>
+        </select>
+      </label>
+    </div>
+  </main>
+
+  <aside class="facts" id="facts" hidden></aside>
+
+  <div class="overlay" id="overlay" hidden></div>
+</div>
+
+<script src="./vendor/3Dmol-min.js"></script>
+<script type="module" src="./src/app.js"></script>
+</body>
+</html>
